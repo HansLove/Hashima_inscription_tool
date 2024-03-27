@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-family: monospace;
+    background: linear-gradient(45deg,navy,black);
+    color: white;
+}
+html {
+    max-width: 70ch;
+    padding: 3rem 1rem;
+    margin: auto;
+    line-height: 1.25;
+    background: transparent;
+}
+ul li a{
+    background: transparent;
+    text-decoration: none !important;
+}
+a.active:before
+{
+    content : '['
+}
+a.active:after
+{
+    content : ']'
+}
+
+h1 {
+    font-size: 2rem;
+    background: transparent;
+}
+h2 {
+    background: transparent;
+    font-size: 1.5rem;
+}
+p {
+    background: transparent;
+    font-size: 1.5rem;
+}
+label
+{
+    background: transparent;
+    display: block;
+    margin-bottom: 10px;
+}
+input {
+    line-height: 1.25;
+    width: 100%;
+    height: 1.8rem;
+    font-size: 1.15rem;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    background: black;
+    border-radius: 0.3rem;
+    padding: 1%;
+}
+
+.button_get_data{
+    cursor: pointer;
+    background: green;
+    margin: 1%;
+    border-radius: 0.5rem;
+    padding: 1%;
+}
+
+.button_get_data:hover{
+    transition: all 0.3s ease-in-out;
+    background: forestgreen;
+}
+.black-bg{
+    display:none;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    opacity:.5;
+    width:100vw;
+    height:100vh;
+}
+.modal {
+    display: none;
+    position: fixed;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 560px;
+    max-height: 100vh;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid var(--primary-color);
+}
+
+.modal-content {
+    overflow-y: auto;
+    max-height: 85vh;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: transparent;
+}
+
+.display {
+    display: none;
+    border: 1px solid white;
+    padding: 1rem;
+    border-radius: 1rem;
+    word-wrap: break-word;
+    text-align: center;
+    position: relative;
+}
+
+.display p {
+    text-align: left;
+}
+
+.checking_mempool, .checking_mempool span {
+    color: lightgreen;
+}
+
+.feerates {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fee {
+    width: 100%;
+    max-width: 6rem;
+    margin: 0px 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.fee .num {
+    background: gray;
+    border: 1px solid white;
+    border-radius: 50rem;
+    padding: .5rem;
+}
+.fee .num:hover {
+    background: green;
+    border: 1px solid lime;
+    border-radius: 50rem;
+    padding: .5rem;
+}
+
+.minfee .num {
+    background-color: forestgreen;
+}
+
+.safari_warning {
+    display: none;
+}
+
+.registration, .upload_file {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dns_form, .dns_checker, .timer {
+    display: none;
+}

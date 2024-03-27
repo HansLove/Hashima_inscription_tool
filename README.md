@@ -1,6 +1,10 @@
-# Inscriptions online
+# Hashima Inscriptions 
 An online interface for creating inscriptions
+Hashima minting process adaptaded 
 
-# How to try it
 
+
+
+
+# Thanks to:
 https://inscribetheplanet.com/
