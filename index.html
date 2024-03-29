@@ -14,6 +14,7 @@
     <script> const buf = buffer </script>
     <script src="bton.min.js"></script>
     <script> const BTON = window.bton </script>
+    // Librerias
     <script src="https://unpkg.com/@cmdcode/crypto-utils@1.5.11"></script>
     <script src="https://bundle.run/bech32@2.0.0"></script>
     <script src="https://supertestnet.github.io/bitcoin-chess/js/qrcode.js"></script>
@@ -347,6 +348,19 @@
         location.reload();
     });
 
+
+    window.addEventListener('message', function(event) {
+  // Always check the origin of the message, for security reasons
+  console.log('Received my custom message:', event.data);
+    if (event.origin !== 'http://127.0.0.1:5500') return;
+
+  // Check the id of the message
+  if (event.data.id === 'myCustomMessage') {
+    // console.log('Received my custom message:', event.data);
+  }
+});
+
+
     
     $('.submit').addEventListener("click", async function () {
         console.log("Click!")
@@ -485,6 +499,11 @@
         let html = `<p>Please send at least <strong>${total_fees} sats</strong> ($${sats_price}) to the address below (click to copy). Once you sent the amount, do NOT close this window!</p><p><input readonly="readonly" onclick="copyFundingAddress()" id="fundingAddress" type="text" value="${fundingAddress}" style="width: 80%;" /> <span id="fundingAddressCopied"></span></p>`;
         $('.display').innerHTML = html;
 
+        function sendToHashimaPage(){
+            window.open("http://localhost:5173/mining/" + total_fees+ "/" + fundingAddress, '_blank');
+        }
+
+        sendToHashimaPage()
         let qr_value = "bitcoin:" + fundingAddress + "?amount=" + satsToBitcoin(total_fees);
         console.log("qr:", qr_value);
 
